@@ -1,11 +1,13 @@
 ---
 - name: install sudo
+  become: true
   tags: setup
   pacman:
     name: sudo
     state: present
 
 - name: create user
+  become: true
   tags: setup
   user:
     name: "{{ user }}"
@@ -15,6 +17,7 @@
     create_home: yes
 
 - name: give user sudo priviliges
+  become: true
   tags: setup
   lineinfile:
    path: /etc/sudoers
