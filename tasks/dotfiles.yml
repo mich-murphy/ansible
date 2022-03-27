@@ -1,5 +1,6 @@
 ---
 - name: install requirements from package manager
+  become: true
   become_user: "{{ user }}"
   tags: dotfiles
   package: 
@@ -46,7 +47,6 @@
   shell: chsh -s /usr/sbin/zsh
 
 - name: clone yay repo
-  become: true
   become_user: "{{ user }}"
   tags: dotfiles
   git:

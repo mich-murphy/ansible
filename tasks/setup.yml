@@ -23,6 +23,7 @@
    line: '%wheel ALL=(ALL) ALL'
 
 - name: install core system packages
+  become: true
   become_user: "{{ user }}"
   tags: setup
   pacman:

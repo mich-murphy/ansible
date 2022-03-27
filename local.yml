@@ -1,6 +1,5 @@
 ---
 - hosts: localhost
-  become: true
   vars:
     - dotfiles_repo: git@github.com:mich-murphy/.dotfiles.git
     - source_key: "./.ssh/id_rsa"
@@ -9,6 +8,7 @@
 
   pre_tasks:
   - name: System update
+    become: true
     tags: always
     pacman:
       update_cache: yes
