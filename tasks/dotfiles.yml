@@ -44,3 +44,7 @@
   user:
     name: "{{ username }}"
     shell: chsh -s $(which zsh)
+
+- aur:
+    name: polybar
+    user: "{{ username }}"
