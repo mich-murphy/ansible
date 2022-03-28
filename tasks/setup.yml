@@ -1,28 +1,10 @@
 ---
-- name: install sudo and reflector
+- name: install sudo
   tags: setup
   pacman:
     name: 
       - sudo
-      - reflector
     state: present
-
-- name: update reflector config
-  lineinfile:
-    path: /etc/xdg/reflector/reflector.conf
-    line: '--country "Australia"'
-
-- name: enable reflector.timer
-  systemd:
-    name: reflector.timer
-    enabled: yes
-    state: started
-
-- name: enable reflector.service
-  systemd:
-    name: reflector.service
-    enabled: yes
-    state: started
 
 - name: create the `aur_builder` user
   user:
