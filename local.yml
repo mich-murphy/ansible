@@ -13,7 +13,6 @@
     pacman:
       update_cache: yes
       upgrade: yes
-    when: ansible_distribution == "Arch"
 
   tasks:
   - include_tasks: tasks/setup.yml
