@@ -1,7 +1,6 @@
 ---
 - name: install requirements from package manager
-  become: true
-  become_user: "{{ user }}"
+  become: yes
   tags: dotfiles
   package: 
     name:
@@ -41,20 +40,8 @@
       - yarn
     state: present
       
-- name: change shell
-  become_user: "{{ user }}"
+- name: change "{{ username }}"'s shell to zsh
   tags: dotfiles
-  shell: chsh -s /usr/sbin/zsh
-
-- name: clone yay repo
-  become_user: "{{ user }}"
-  tags: dotfiles
-  git:
-    repo: https://aur.archlinux.org/yay.git
-    dest: "/home/{{ user }}/git/yay"
-    clone: yes
-
-- name: make yay package
-  become_user: "{{ user }}"
-  tags: dotfiles
-  shell: "cd /home/{{ user }}/git/yay/ && makepkg -si"
+  user:
+    name: "{{ username }}"
+    shell: chsh -s /usr/bin/zsh

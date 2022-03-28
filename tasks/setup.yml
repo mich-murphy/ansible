@@ -1,23 +1,33 @@
 ---
 - name: install sudo
-  become: true
   tags: setup
   pacman:
     name: sudo
     state: present
 
-- name: create user
-  become: true
+- name: create the `aur_builder` user
+  user:
+    name: aur_builder
+    create_home: yes
+    group: wheel
+
+- name: Allow the `aur_builder` user to run `sudo pacman` without a password
+  lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
+
+- name: create "{{ username }}" user
   tags: setup
   user:
-    name: "{{ user }}"
+    name: "{{ username }}"
     password: $6$jkw3ST8ONcMgA8Zl$weIYelXXNMCos5sNEzbKPnaBZv62LQF.NXR1H.N/AgG.IR6YFcvTU9SeqGYYaUU7r1IYGVxGLdjgIyekPi4XR.
     groups: wheel
     shell: /bin/bash
     create_home: yes
 
-- name: give user sudo priviliges
-  become: true
+- name: give "{{ username }}" sudo priviliges
   tags: setup
   lineinfile:
    path: /etc/sudoers
@@ -26,8 +36,6 @@
    line: '%wheel ALL=(ALL) ALL'
 
 - name: install core system packages
-  become: true
-  become_user: "{{ user }}"
   tags: setup
   pacman:
     name:
