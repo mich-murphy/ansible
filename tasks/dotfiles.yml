@@ -43,7 +43,7 @@
   tags: dotfiles
   user:
     name: "{{ username }}"
-    shell: $(which zsh)
+    shell: /usr/bin/zsh
 
 - name: install polybar
   aur:
