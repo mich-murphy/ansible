@@ -1,6 +1,5 @@
 ---
 - name: install requirements from package manager
-  become: yes
   tags: dotfiles
   package: 
     name:
@@ -44,4 +43,4 @@
   tags: dotfiles
   user:
     name: "{{ username }}"
-    shell: chsh -s /usr/bin/zsh
+    shell: chsh -s $(which zsh)
