@@ -45,6 +45,7 @@
     name: "{{ username }}"
     shell: chsh -s $(which zsh)
 
-- aur:
+- name: install polybar
+  aur:
     name: polybar
     user: "{{ username }}"

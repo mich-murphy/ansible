@@ -8,12 +8,12 @@
     - username: mm
 
   pre_tasks:
-  - name: System update
+  - name: system update
     tags: always
     pacman:
       update_cache: yes
       upgrade: yes
-    when: ansible_distribution == "Arch Linux"
+    when: ansible_distribution == "Arch"
 
   tasks:
   - include_tasks: tasks/setup.yml
