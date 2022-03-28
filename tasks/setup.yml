@@ -16,10 +16,12 @@
   systemd:
     name: reflector.timer
     enabled: yes
+    state: started
 
 - name: enable reflector.service
   systemd:
     name: reflector.service
+    enabled: yes
     state: started
 
 - name: create the `aur_builder` user
