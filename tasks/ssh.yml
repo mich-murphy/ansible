@@ -19,8 +19,8 @@
 
 - name: Set authorized key took from file
   authorized_key:
-    user: "{{ lookup('env', 'USER') }}"
+    user: "{{ username }}"
     state: present
-    key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
+    key: "/home/{{ username }}/.ssh/id_rsa.pub"
   with_fileglob:
-  - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
+  - "/home/{{ username }}/.ssh/*.pub"
