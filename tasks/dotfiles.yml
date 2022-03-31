@@ -58,28 +58,28 @@
     state: present
   become_user: aur_builder
 
-- name: install AUR packages
-  kewlfft.aur.aur:
-    use: yay
-    name: 
-      - devour
-      - autotiling-git
-      - bibata-cursor-theme
-      - brave-bin
-      - cava
-      - mkpasswd
-      - picom-git
-      - rofi-greenclip
-      - rofi-power-menu
-      - rxfetch
-      - spotify-tui
-      - spotifyd-full-git
-      - ttf-material-design-icons
-      - vscodium
-      - vscodium-marketplace
-      - polybar
-      - nsxiv
-    state: present
+# - name: install AUR packages
+#   kewlfft.aur.aur:
+#     use: yay
+#     name: 
+#       - devour
+#       - autotiling-git
+#       - bibata-cursor-theme
+#       - brave-bin
+#       - cava
+#       - mkpasswd
+#       - picom-git
+#       - rofi-greenclip
+#       - rofi-power-menu
+#       - rxfetch
+#       - spotify-tui
+#       - spotifyd-full-git
+#       - ttf-material-design-icons
+#       - vscodium
+#       - vscodium-marketplace
+#       - polybar
+#       - nsxiv
+#     state: present
 
 - name: clone dotfiles
   git:
