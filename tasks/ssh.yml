@@ -21,4 +21,4 @@
   authorized_key:
     user: "{{ username }}"
     state: present
-    key: https://github.com/mich-murphy/ansible/blob/master/.ssh/id_rsa.pub
+    key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
