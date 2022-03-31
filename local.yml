@@ -4,8 +4,11 @@
   vars:
     - dotfiles_repo: git@github.com:mich-murphy/.dotfiles.git
     - source_key: "./.ssh/id_rsa"
-    - dest_key: "home/mm/.ssh/id_rsa"
     - username: mm
+    - dest_key: "/home/{{ username }}/.ssh/id_rsa"
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"
 
   pre_tasks:
   - name: system update
@@ -18,5 +21,6 @@
 
   tasks:
   - include_tasks: tasks/setup.yml
+  - include_tasks: tasks/ssh.yml
   - include_tasks: tasks/dotfiles.yml
   - include_tasks: tasks/systemd.yml

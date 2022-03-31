@@ -80,3 +80,16 @@
       - polybar
       - nsxiv
     state: present
+
+- name: clone dotfiles
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "/home/{{ username }}/.dotfiles"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: master
+
+- name: stow dotfiles
+  shell: cd "/home/{{ username }}/.dotfiles" && stow */
+

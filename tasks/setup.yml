@@ -3,7 +3,7 @@
   tags: setup
   user:
     name: "{{ username }}"
-    password: $6$jkw3ST8ONcMgA8Zl$weIYelXXNMCos5sNEzbKPnaBZv62LQF.NXR1H.N/AgG.IR6YFcvTU9SeqGYYaUU7r1IYGVxGLdjgIyekPi4XR.
+    password: "{{ user_password|password_hash('sha512') }}"
     groups: wheel
     shell: /bin/bash
     create_home: yes
@@ -17,14 +17,13 @@
    line: '%wheel ALL=(ALL) ALL'
 
 - name: Create the `aur_builder` user
-  become: yes
   ansible.builtin.user:
     name: aur_builder
+    password: "{{ user_password|password_hash('sha512') }}"
     create_home: yes
     group: wheel
 
 - name: Allow the `aur_builder` user to run `sudo pacman` without a password
-  become: yes
   ansible.builtin.lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
     line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
