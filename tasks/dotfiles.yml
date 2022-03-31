@@ -45,11 +45,6 @@
     name: "{{ username }}"
     shell: /usr/bin/zsh
 
-# - name: install yay
-#   aur:
-#     name: yay
-#     user: "{{ username }}"
-
 - name: install yay
   kewlfft.aur.aur:
     name: yay
@@ -62,5 +57,20 @@
     use: yay
     name: 
       - devour
-      - polybar
+      - autotiling-git
+      - bibata-cursor-theme
+      - brave-bin
+      - cava
+      - mkpasswd
+      - picom-git
+      - rofi-greenclip
+      - rofi-power-menu
+      - rxfetch
+      - spotify-tui
+      - spotifyd-full-git
+      - ttf-material-design-icons
+      - vscodium
+      - vscodium-marketplace
+      - polybar-git
       - nsxiv
+    state: present
