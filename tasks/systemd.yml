@@ -1,0 +1,24 @@
+---
+- name: enable firewalld service
+  systemd:
+    name: firewalld.
+    state: started
+    enabled: yes
+
+- name: enable iptables service
+  systemd:
+    name: iptables.service
+    state: started
+    enabled: yes
+
+- name: enable spotifyd service
+  systemd:
+    name: spotifyd.service
+    state: started
+    enabled: yes
+
+- name: enable tlp service
+  systemd:
+    name: tlp.service
+    state: started
+    enabled: yes
