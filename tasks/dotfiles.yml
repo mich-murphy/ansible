@@ -56,3 +56,11 @@
     use: makepkg
     state: present
   become_user: aur_builder
+
+- name: install AUR packages
+  kewlfft.aur.aur:
+    use: yay
+    name: 
+      - devour
+      - polybar
+      - nsxiv
