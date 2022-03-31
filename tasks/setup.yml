@@ -46,4 +46,5 @@
       - xcape
       - unzip
       - polkit
+      - networkmanager
     state: present

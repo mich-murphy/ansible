@@ -29,6 +29,7 @@
       - fd
       - diff-so-fancy
       - exa
+      - bat
       - ripgrep
       - firefox
       - firewalld
@@ -37,6 +38,10 @@
       - python-neovim
       - nodejs
       - yarn
+      - zathura-pdf-mupdf
+      - openssh
+      - tree
+      - tlp
     state: present
       
 - name: change "{{ username }}"'s shell to zsh
