@@ -1,11 +1,4 @@
 ---
-- name: install sudo
-  tags: setup
-  pacman:
-    name: 
-      - sudo
-    state: present
-
 - name: create "{{ username }}" user
   tags: setup
   user:

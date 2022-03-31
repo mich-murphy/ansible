@@ -45,21 +45,16 @@
     name: "{{ username }}"
     shell: /usr/bin/zsh
 
-# - name: install aur requirements
-#   package:
-#     name:
-#       - binutils
-#       - which
-#       - fakeroot
-#       - gcc
-#       - cmake
-#       - make
-#     state: present
+- name: install yay
+  aur:
+    name: yay
+    user: "{{ username }}"
 
 - name: install AUR packages
-  aur:
-    name: 
+  pacman:
+    name:
       - polybar
-      - yay
-    user: "{{ username }}"
-    # dir: $XDG_CONFIG_HOME/local/bin
+      - devour
+    state: present
+    executable: yay
+    extra_args: --noconfirm --noprogressbar
