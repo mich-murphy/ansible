@@ -33,6 +33,7 @@
       - ripgrep
       - firefox
       - firewalld
+      - iptables
       - fzf
       - neovim
       - python-neovim
@@ -41,7 +42,7 @@
       - zathura-pdf-mupdf
       - openssh
       - tree
-      - tlp
+      - tlp # laptop power management
     state: present
       
 - name: change "{{ username }}"'s shell to zsh
