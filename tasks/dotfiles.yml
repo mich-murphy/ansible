@@ -45,7 +45,21 @@
     name: "{{ username }}"
     shell: /usr/bin/zsh
 
-- name: install polybar
+# - name: install aur requirements
+#   package:
+#     name:
+#       - binutils
+#       - which
+#       - fakeroot
+#       - gcc
+#       - cmake
+#       - make
+#     state: present
+
+- name: install AUR packages
   aur:
-    name: polybar
+    name: 
+      - polybar
+      - yay
     user: "{{ username }}"
+    # dir: $XDG_CONFIG_HOME/local/bin
