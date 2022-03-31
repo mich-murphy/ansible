@@ -71,6 +71,6 @@
       - ttf-material-design-icons
       - vscodium
       - vscodium-marketplace
-      - polybar-git
+      - polybar
       - nsxiv
     state: present
