@@ -45,16 +45,14 @@
     name: "{{ username }}"
     shell: /usr/bin/zsh
 
-- name: install yay
-  aur:
-    name: yay
-    user: "{{ username }}"
+# - name: install yay
+#   aur:
+#     name: yay
+#     user: "{{ username }}"
 
-- name: install AUR packages
-  pacman:
-    name:
-      - polybar
-      - devour
+- name: install yay
+  kewlfft.aur.aur:
+    name: yay
+    use: makepkg
     state: present
-    executable: yay
-    extra_args: --noconfirm
+  become_user: aur_builder
