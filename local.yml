@@ -17,6 +17,6 @@
     shell: ansible-galaxy collection install kewlfft.aur
 
   tasks:
-  - include_tasks: setup.yml
-  - include_tasks: dotfiles.yml
-  - include_tasks: systemd.yml
+  - include_tasks: tasks/setup.yml
+  - include_tasks: tasks/dotfiles.yml
+  - include_tasks: tasks/systemd.yml
