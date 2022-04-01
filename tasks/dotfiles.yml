@@ -45,6 +45,7 @@
     state: present
       
 - name: install starship prompt
+  become_user: "{{ username }}"
   shell: curl -sS https://starship.rs/install.sh | sh
 
 - name: change "{{ username }}"'s shell to zsh
