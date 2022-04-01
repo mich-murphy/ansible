@@ -21,6 +21,7 @@
     mode: 0644
 
 - name: set authorized key from file
+  become_user: "{{ username }}"
   authorized_key:
     user: "{{ username }}"
     state: present
