@@ -55,15 +55,12 @@
     shell: /usr/bin/zsh
 
 - name: install yay
-  kewlfft.aur.aur:
+  aur:
     name: yay
-    use: makepkg
-    state: present
-  become_user: aur_builder
+    user: "{{ username }}"
 
 - name: install AUR packages
-  kewlfft.aur.aur:
-    use: yay
+  aur:
     name:
       - devour
       - autotiling-git
@@ -83,7 +80,7 @@
       - polybar
       - nsxiv
       - auto-cpufreq
-    state: present
+    user: "{{ username }}"
 
 - name: clone dotfiles
   git:
