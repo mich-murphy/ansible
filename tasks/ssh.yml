@@ -23,6 +23,6 @@
   authorized_key:
     user: "{{ username }}"
     state: present
-    key: "{{ lookup('file', /home/{{ username }}/.ssh/id_rsa.pub) }}"
+    key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
   with_fileglob:
   - "/home/{{ username }}/.ssh/*.pub"
