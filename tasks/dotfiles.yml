@@ -61,7 +61,7 @@
   kewlfft.aur.aur:
     use: yay
     name:
-      - devour
+      # - devour
       - autotiling-git
       - bibata-cursor-theme
       - brave-bin
