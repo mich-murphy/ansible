@@ -62,7 +62,7 @@
 
 - name: install AUR packages
   kewlfft.aur.aur:
-    use: makepkg
+    use: yay
     name:
       - devour
       - autotiling-git

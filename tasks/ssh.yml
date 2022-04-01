@@ -17,8 +17,8 @@
     dest: "{{ dest_key }}.pub"
     mode: 0644
 
-- name: change .ssh/ ownership
-  shell: sudo chown "{{ username }}":wheel "/home/{{ username }}/.ssh"
+# - name: change .ssh/ ownership
+#   shell: sudo chown "{{ username }}":wheel "/home/{{ username }}/.ssh"
 
 - name: set authorized key took from file
   authorized_key:
