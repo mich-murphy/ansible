@@ -1,11 +1,17 @@
 ---
+- name: install zsh
+  tags: setup
+  package:
+    name: zsh
+    state: present
+
 - name: create "{{ username }}" user
   tags: setup
   user:
     name: "{{ username }}"
     password: "{{ user_password|password_hash('sha512') }}"
     groups: wheel
-    shell: /bin/bash
+    shell: /bin/zsh
     create_home: yes
 
 - name: give "{{ username }}" sudo priviliges
@@ -18,7 +24,7 @@
 
 - name: install core system packages
   tags: setup
-  pacman:
+  package:
     name:
       - man
       - man-pages
