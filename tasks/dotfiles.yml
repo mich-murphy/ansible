@@ -32,7 +32,7 @@
       - bat
       - ripgrep
       - firefox
-      - firewalld
+      - ufw
       - iptables
       - fzf
       - neovim
@@ -59,9 +59,9 @@
 
 - name: install AUR packages
   kewlfft.aur.aur:
-    use: yay
+    use: makepkg
     name:
-      # - devour
+      - devour
       - autotiling-git
       - bibata-cursor-theme
       - brave-bin

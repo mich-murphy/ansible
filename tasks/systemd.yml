@@ -1,7 +1,7 @@
 ---
-- name: enable firewalld service
+- name: enable ufw service
   systemd:
-    name: firewalld.
+    name: ufw.service
     state: started
     enabled: yes
 
