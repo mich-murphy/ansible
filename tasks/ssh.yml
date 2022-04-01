@@ -1,23 +1,26 @@
 ---
-- name: Ensure .ssh directory exists.
+- name: ensure .ssh directory exists.
   file:
     dest: "{{ dest_key | dirname }}"
     mode: 0700
     state: directory
 
-- name: Install ssh key
+- name: install ssh key
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
 
-- name: Install ssh key public
+- name: install ssh key public
   copy:
     src: "{{ source_key }}.pub"
     dest: "{{ dest_key }}.pub"
     mode: 0644
 
-- name: Set authorized key took from file
+- name: change .ssh/ ownership
+  shell: sudo chown "{{ username }}":"{{ username }}" "/home/{{ username }}/.ssh"
+
+- name: set authorized key took from file
   authorized_key:
     user: "{{ username }}"
     state: present
