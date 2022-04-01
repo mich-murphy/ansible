@@ -42,7 +42,6 @@
       - zathura-pdf-mupdf
       - openssh
       - tree
-      - tlp # laptop power management
     state: present
       
 - name: change "{{ username }}"'s shell to zsh
@@ -79,6 +78,7 @@
       - vscodium-marketplace
       - polybar
       - nsxiv
+      - auto-cpufreq
     state: present
 
 - name: clone dotfiles

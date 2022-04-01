@@ -17,8 +17,8 @@
     state: started
     enabled: yes
 
-- name: enable tlp service
+- name: enable auto-cpufreq service
   systemd:
-    name: tlp.service
+    name: auto-cpufreq.service
     state: started
     enabled: yes
