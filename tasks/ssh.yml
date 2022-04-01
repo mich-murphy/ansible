@@ -2,25 +2,31 @@
 - name: ensure .ssh directory exists.
   file:
     dest: "{{ dest_key | dirname }}"
-    mode: 0700
+    mode: 0600
     state: directory
+    owner: "{{ username }}"
+    group: wheel
 
 - name: install ssh key
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
+    owner: "{{ username }}"
+    group: wheel
 
 - name: install ssh key public
   copy:
     src: "{{ source_key }}.pub"
     dest: "{{ dest_key }}.pub"
-    mode: 0644
+    mode: 0600
+    owner: "{{ username }}"
+    group: wheel
 
 - name: set authorized key took from file
   authorized_key:
     user: "{{ username }}"
     state: present
-    key: "{{ lookup('file', {{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub) }}"
+    key: "{{ lookup('file', /home/{{ username }}/.ssh/id_rsa.pub) }}"
   with_fileglob:
-  - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
+  - "/home/{{ username }}/.ssh/*.pub"
