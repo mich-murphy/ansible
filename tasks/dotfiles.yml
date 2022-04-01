@@ -64,6 +64,7 @@
     name:
       - devour
       - autotiling-git
+      - python-clickgen
       - bibata-cursor-theme
       - brave-bin
       - cava
