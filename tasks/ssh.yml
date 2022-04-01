@@ -19,10 +19,10 @@
     dest: "{{ dest_key }}.pub"
     mode: 0644
 
-# - name: set authorized key took from file
-#   authorized_key:
-#     user: "{{ username }}"
-#     state: present
-#     key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
-  # with_fileglob:
-  # - "/home/{{ username }}/.ssh/*.pub"
+- name: set authorized key took from file
+  authorized_key:
+    user: "{{ username }}"
+    state: present
+    key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
+  with_fileglob:
+  - "/home/{{ username }}/.ssh/*.pub"
