@@ -1,5 +1,5 @@
 ---
-- name: ensure .ssh directory exists.
+- name: ensure .ssh directory exists
   file:
     dest: "{{ dest_key | dirname }}"
     mode: 0600
@@ -23,10 +23,10 @@
     owner: "{{ username }}"
     group: wheel
 
-- name: set authorized key took from file
-  authorized_key:
-    user: "{{ username }}"
-    state: present
-    key: "{{ lookup('file', /home/{{ username }}/.ssh/id_rsa.pub) }}"
-  with_fileglob:
-  - "/home/{{ username }}/.ssh/*.pub"
+# - name: set authorized key took from file
+#   authorized_key:
+#     user: "{{ username }}"
+#     state: present
+#     key: "{{ lookup('file', /home/{{ username }}/.ssh/id_rsa.pub) }}"
+#   with_fileglob:
+#   - "/home/{{ username }}/.ssh/*.pub"
