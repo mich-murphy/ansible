@@ -1,10 +1,4 @@
 ---
-- name: install zsh
-  tags: setup
-  package:
-    name: zsh
-    state: present
-
 - name: create "{{ username }}" user
   tags: setup
   user:
@@ -24,7 +18,7 @@
 
 - name: install core system packages
   tags: setup
-  package:
+  community.general.pacman:
     name:
       - man
       - man-pages

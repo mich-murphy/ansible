@@ -1,8 +1,9 @@
 ---
 - name: install requirements from package manager
   tags: dotfiles
-  package: 
+  community.general.pacman: 
     name:
+      - zsh
       - zsh-completions
       - zsh-syntax-highlighting
       - kitty
@@ -47,11 +48,11 @@
 #   become_user: "{{ username }}"
 #   shell: curl -sS https://starship.rs/install.sh | sh
 
-# - name: change "{{ username }}"'s shell to zsh
-#   tags: dotfiles
-#   user:
-#     name: "{{ username }}"
-#     shell: /usr/bin/zsh
+- name: change "{{ username }}"'s shell to zsh
+  tags: dotfiles
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/zsh
 
 - name: install yay
   aur:

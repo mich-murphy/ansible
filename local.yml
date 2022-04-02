@@ -13,7 +13,7 @@
   pre_tasks:
   - name: system update
     tags: always
-    pacman:
+    community.general.pacman:
       update_cache: yes
       upgrade: yes
 
