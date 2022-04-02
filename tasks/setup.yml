@@ -5,7 +5,7 @@
     name: "{{ username }}"
     password: "{{ user_password|password_hash('sha512') }}"
     groups: wheel
-    shell: /bin/zsh
+    shell: /bin/bash
     create_home: yes
 
 - name: give "{{ username }}" sudo priviliges

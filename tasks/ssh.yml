@@ -2,7 +2,7 @@
 - name: ensure .ssh directory exists
   file:
     dest: "{{ dest_key | dirname }}"
-    mode: 0644
+    mode: 0700
     state: directory
     owner: "{{ username }}"
     group: wheel
@@ -19,7 +19,7 @@
     dest: "{{ dest_key }}.pub"
     mode: 0644
 
-- name: set authorized key took from file
+- name: set authorized key from github
   authorized_key:
     user: "{{ username }}"
     state: present
