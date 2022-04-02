@@ -85,6 +85,7 @@
     user: "{{ username }}"
 
 - name: clone dotfiles
+  become_user: "{{ username }}"
   git:
     repo: "{{ dotfiles_repo }}"
     dest: "/home/{{ username }}/.dotfiles"
