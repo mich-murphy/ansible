@@ -1,7 +1,7 @@
 ---
 - name: install requirements from package manager
   tags: dotfiles
-  community.general.pacman: 
+  package:
     name:
       - zsh
       - zsh-completions
@@ -74,7 +74,7 @@
       - rofi-power-menu
       - rxfetch
       - spotify-tui
-      - spotifyd-full-git
+      # - spotifyd-full-git
       - ttf-material-design-icons
       - nvm
       - vscodium

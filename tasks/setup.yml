@@ -18,7 +18,7 @@
 
 - name: install core system packages
   tags: setup
-  community.general.pacman:
+  package:
     name:
       - man
       - man-pages
