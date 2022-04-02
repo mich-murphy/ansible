@@ -23,6 +23,4 @@
   authorized_key:
     user: "{{ username }}"
     state: present
-    key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
-  with_fileglob:
-  - "/home/{{ username }}/.ssh/*.pub"
+    key: https://github.com/mich-murphy.keys
