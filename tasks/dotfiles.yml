@@ -76,6 +76,7 @@
       - spotify-tui
       - spotifyd-full-git
       - ttf-material-design-icons
+      - nvm
       - vscodium
       - vscodium-marketplace
       - polybar
