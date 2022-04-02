@@ -55,14 +55,14 @@
     shell: /usr/bin/zsh
 
 - name: install yay
+  become_user: aur_builder
   kewlfft.aur.aur:
     name: yay
     use: makepkg
     state: present
-  become: yes
-  become_user: aur_builder
 
 - name: install AUR packages
+  become_user: aur_builder
   kewlfft.aur.aur:
     name:
       - devour
