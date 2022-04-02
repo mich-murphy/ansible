@@ -85,7 +85,7 @@
       - polybar
       - nsxiv
       - auto-cpufreq
-    use: auto
+    use: makepkg
     state: present
 
 - name: clone dotfiles
