@@ -16,6 +16,8 @@
     community.general.pacman:
       update_cache: yes
       upgrade: yes
+  - name: install AUR module
+    command: ansible-galaxy collection install kewlfft.aur
 
   tasks:
   - include_tasks: tasks/setup.yml

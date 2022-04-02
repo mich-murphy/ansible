@@ -55,12 +55,15 @@
     shell: /usr/bin/zsh
 
 - name: install yay
-  aur:
+  kewlfft.aur.aur:
     name: yay
-    user: "{{ username }}"
+    use: makepkg
+    state: present
+  become: yes
+  become_user: aur_builder
 
 - name: install AUR packages
-  aur:
+  kewlfft.aur.aur:
     name:
       - devour
       - autotiling-git
@@ -74,7 +77,7 @@
       - rofi-power-menu
       - rxfetch
       - spotify-tui
-      # - spotifyd-full-git
+      - spotifyd-full-git
       - ttf-material-design-icons
       - nvm
       - vscodium
@@ -82,7 +85,8 @@
       - polybar
       - nsxiv
       - auto-cpufreq
-    user: "{{ username }}"
+    use: yay
+    state: present
 
 - name: clone dotfiles
   become_user: "{{ username }}"
