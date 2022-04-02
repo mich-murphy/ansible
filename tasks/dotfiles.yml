@@ -85,7 +85,7 @@
       - polybar
       - nsxiv
       - auto-cpufreq
-    use: yay
+    use: auto
     state: present
 
 - name: clone dotfiles
