@@ -1,12 +1,14 @@
 ---
 - name: Create the `aur_builder` user
-  ansible.builtin.user:
+  user:
     name: aur_builder
-    create_home: yes
-    group: wheel
+    comment: "AUR manager"
+    home: /var/lib/aur_builder
+    shell: /bin/nologin
+    system: yes
 
 - name: Allow the `aur_builder` user to run `sudo pacman` without a password
-  ansible.builtin.lineinfile:
+  lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
     line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
     create: yes

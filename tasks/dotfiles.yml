@@ -44,10 +44,6 @@
       - tree
     state: present
       
-# - name: install starship prompt
-#   become_user: "{{ username }}"
-#   shell: curl -sS https://starship.rs/install.sh | sh
-
 - name: change "{{ username }}"'s shell to zsh
   tags: dotfiles
   user:
@@ -55,11 +51,9 @@
     shell: /usr/bin/zsh
 
 - name: install yay
-  become_user: aur_builder
-  kewlfft.aur.aur:
+  aur:
     name: yay
-    use: makepkg
-    state: present
+    user: aur_builder
 
 - name: install AUR packages
   aur:
@@ -98,3 +92,8 @@
 
 - name: stow dotfiles
   shell: cd "/home/{{ username }}/.dotfiles" && stow */
+
+# - name: install starship prompt
+#   become_user: "{{ username }}"
+#   shell: curl -sS https://starship.rs/install.sh | sh
+
