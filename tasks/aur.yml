@@ -1,0 +1,30 @@
+---
+- name: install yay
+  aur:
+    name: yay
+    user: aur_builder
+
+- name: install AUR packages
+  aur:
+    name:
+      - devour
+      - autotiling-git
+      - python-clickgen
+      - bibata-cursor-theme
+      - brave-bin
+      - cava
+      - mkpasswd
+      - picom-git
+      - rofi-greenclip
+      - rofi-power-menu
+      - rxfetch
+      - spotify-tui
+      - spotifyd-full-git
+      - ttf-material-design-icons
+      - nvm
+      - vscodium
+      - vscodium-marketplace
+      - polybar
+      - nsxiv
+      - auto-cpufreq
+    user: aur_builder

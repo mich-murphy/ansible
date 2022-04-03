@@ -2,9 +2,9 @@
 - hosts: localhost
   become: yes
   vars:
+    - username: mm
     - dotfiles_repo: git@github.com:mich-murphy/.dotfiles.git
     - source_key: "./.ssh/id_rsa"
-    - username: mm
     - dest_key: "/home/{{ username }}/.ssh/id_rsa"
   vars_prompt:
     - name: user_password
@@ -16,11 +16,11 @@
     community.general.pacman:
       update_cache: yes
       upgrade: yes
-  - name: install AUR module
-    command: ansible-galaxy collection install kewlfft.aur
 
   tasks:
   - include_tasks: tasks/setup.yml
   - include_tasks: tasks/ssh.yml
+  - include_tasks: tasks/pacman.yml
+  - include_tasks: tasks/aur.yml
   - include_tasks: tasks/dotfiles.yml
   - include_tasks: tasks/systemd.yml
