@@ -21,7 +21,7 @@
 - name: stow dotfiles
   shell: cd "/home/{{ username }}/.dotfiles" && stow */
 
-# - name: install starship prompt
-#   become_user: "{{ username }}"
-#   shell: curl -sS https://starship.rs/install.sh | sh
+- name: install starship prompt
+  become_user: "{{ username }}"
+  shell: curl -sS https://starship.rs/install.sh | sh
 

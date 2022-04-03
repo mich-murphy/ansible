@@ -7,6 +7,7 @@
     groups: wheel
     shell: /bin/bash
     create_home: yes
+    home: "/home/{{ username }}"
 
 - name: give "{{ username }}" sudo priviliges
   tags: setup
