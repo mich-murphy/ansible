@@ -20,13 +20,3 @@
 
 - name: stow dotfiles
   shell: cd "/home/{{ username }}/.dotfiles" && stow */
-
-- name: download starship install script
-  get_url:
-    url: https://starship.rs/install.sh
-    dest: /opt/starshipinstall
-    mode: 0755
-
-- name: install starship prompt
-  shell: /opt/starshipinstall
-
