@@ -27,3 +27,6 @@ You will be prompted for:
 - ssh decryption key
 - desired user password
 - user sudo password for some AUR packages
+
+To complete install:
+- configure spotifyd and enable service (not yet added to dotfiles)
