@@ -24,4 +24,6 @@
 - name: install starship prompt
   become_user: "{{ username }}"
   shell: curl -sS https://starship.rs/install.sh | sh
+  args:
+    executable: /usr/bin/zsh
 
