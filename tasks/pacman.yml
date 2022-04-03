@@ -6,6 +6,7 @@
       - zsh
       - zsh-completions
       - zsh-syntax-highlighting
+      - starship
       - kitty
       - i3-gaps
       - i3lock
