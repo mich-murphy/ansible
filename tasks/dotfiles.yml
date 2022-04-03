@@ -62,8 +62,7 @@
     state: present
 
 - name: install AUR packages
-  become_user: aur_builder
-  kewlfft.aur.aur:
+  aur:
     name:
       - devour
       - autotiling-git
@@ -85,8 +84,7 @@
       - polybar
       - nsxiv
       - auto-cpufreq
-    use: makepkg
-    state: present
+    user: aur_builder
 
 - name: clone dotfiles
   become_user: "{{ username }}"
