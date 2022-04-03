@@ -2,9 +2,10 @@
 Ansible install playbook for [dotfiles](https://github.com/mich-murphy/.dotfiles)
 
 Ensure the following dependancies have been installed:
-- Arch linux
+- arch linux
 - ansible
 - git
+- base-devel
 
 Tested on [arch linux vagrant image](https://archlinux.org/download/), available via:
 ```
