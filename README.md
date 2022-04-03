@@ -17,3 +17,6 @@ Install using the following command:
 ```
 ansible-pull -K -U https://github.com/mich-murphy/ansible
 ```
+You will be prompted for:
+- ssh decryption key
+- desired user password
