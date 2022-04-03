@@ -2,7 +2,7 @@
 - name: install yay
   aur:
     name: yay
-    user: aur_builder
+    user: "{{ username }}"
 
 - name: install AUR packages
   aur:
@@ -25,4 +25,4 @@
       - polybar
       - nsxiv
       - auto-cpufreq
-    user: aur_builder
+    user: "{{ username }}"
