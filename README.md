@@ -10,6 +10,7 @@ Tested on [arch linux vagrant image](https://archlinux.org/download/), available
 ```
 vagrant init archlinux/archlinux
 vagrant up
+vagrant ssh
 ```
 
 Install using the following command:
