@@ -43,4 +43,6 @@
       - zathura-pdf-mupdf
       - openssh
       - tree
+      - wmctrl
+      - graphicsmagick
     state: present
