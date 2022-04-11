@@ -43,3 +43,6 @@
       - polkit
       - networkmanager
     state: present
+
+- name: set timezone
+  shell: timedatectl set-timezone Australia/Melbourne
