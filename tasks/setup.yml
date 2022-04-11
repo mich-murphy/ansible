@@ -4,7 +4,7 @@
   user:
     name: "{{ username }}"
     password: "{{ user_password|password_hash('sha512') }}"
-    groups: wheel
+    groups: wheel,video
     shell: /bin/bash
     create_home: yes
     home: "/home/{{ username }}"
@@ -16,6 +16,15 @@
    state: present
    regexp: '^%wheel\s'
    line: '%wheel ALL=(ALL) ALL'
+
+- name: allow "{{ username }}" to change backlight
+  tags: setup
+  blockinfile:
+   path: /etc/udev/rules.d/backlight.rules
+   create: yes
+   block: |
+     RUN+="/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
+     RUN+="/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
 
 - name: install core system packages
   tags: setup

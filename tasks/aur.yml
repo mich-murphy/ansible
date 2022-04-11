@@ -12,6 +12,7 @@
       - python-clickgen
       - bibata-cursor-theme
       - brave-bin
+      - brillo
       - cava
       - mkpasswd
       - picom-git
