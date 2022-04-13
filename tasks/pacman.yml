@@ -45,4 +45,6 @@
       - tree
       - wmctrl
       - graphicsmagick
+      - cargo
+      - wget
     state: present
