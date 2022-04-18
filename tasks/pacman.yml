@@ -47,4 +47,5 @@
       - graphicsmagick
       - cargo
       - wget
+      - btop
     state: present
