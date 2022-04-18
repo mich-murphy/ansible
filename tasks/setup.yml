@@ -9,6 +9,18 @@
     create_home: yes
     home: "/home/{{ username }}"
 
+- name: create Downloads folder in "{{ username }}" home
+  tags: setup
+  file:
+    path: "/home/{{ username }}/Downloads"
+    state: directory
+
+- name: create Documents folder in "{{ username }}" home
+  tags: setup
+  file:
+    path: "/home/{{ username }}/Documents"
+    state: directory
+
 - name: give "{{ username }}" sudo priviliges
   tags: setup
   lineinfile:
@@ -42,6 +54,7 @@
       - unzip
       - polkit
       - networkmanager
+      - alsa-utils
     state: present
 
 - name: set timezone
