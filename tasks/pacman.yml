@@ -22,8 +22,6 @@
       - ranger
       - python
       - python-pip
-      - pulseaudio
-      - pulseaudio-alsa
       - pamixer
       - libnotify
       - dunst
@@ -48,4 +46,6 @@
       - cargo
       - wget
       - btop
+      - pipewire
+      - pipewire-pulse
     state: present
