@@ -17,8 +17,9 @@
     state: started
     enabled: yes
 
-# - name: enable spotifyd service
-#   systemd:
-#     name: spotifyd.service
-#     state: started
-#     enabled: yes
+- name: enable spotifyd service
+  systemd:
+    name: spotifyd.service
+    state: started
+    enabled: yes
+    scope: user
