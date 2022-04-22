@@ -8,7 +8,6 @@
 - name: enable iptables service
   systemd:
     name: iptables.service
-    state: started
     enabled: yes
 
 - name: enable auto-cpufreq service
