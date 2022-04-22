@@ -15,8 +15,5 @@
     accept_hostkey: yes
     version: master
 
-- name: remove existing cava directory
-  shell: rm -r "/home/{{ username }}/.config/cava"
-
 - name: stow dotfiles
   shell: cd "/home/{{ username }}/.dotfiles" && stow */
