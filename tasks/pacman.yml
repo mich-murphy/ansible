@@ -48,4 +48,5 @@
       - btop
       - pipewire
       - pipewire-pulse
+      - thunar
     state: present
