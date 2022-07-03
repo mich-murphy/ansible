@@ -8,18 +8,13 @@
       - zsh-syntax-highlighting
       - starship
       - kitty
-      - i3-gaps
-      - i3lock
       - autorandr
       - feh
       - tmux
       - tmuxp
       - stow
       - scrot
-      - rofi
-      - rofi-calc
       - redshift
-      - ranger
       - python
       - python-pip
       - pamixer
@@ -30,9 +25,6 @@
       - exa
       - bat
       - ripgrep
-      - firefox
-      - ufw
-      - iptables
       - fzf
       - neovim
       - python-neovim
@@ -46,7 +38,5 @@
       - cargo
       - wget
       - btop
-      - pipewire
-      - pipewire-pulse
       - thunar
     state: present

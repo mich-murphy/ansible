@@ -7,8 +7,6 @@
 - name: install AUR packages
   aur:
     name:
-      - devour
-      - autotiling-git
       - python-clickgen
       - bibata-cursor-theme
       - brave-bin
@@ -16,14 +14,9 @@
       - cava
       - mkpasswd
       - picom-git
-      - rofi-greenclip
-      - rofi-power-menu
-      - rxfetch
       - spotify-tui
       - spotifyd-full-git
-      - ttf-material-design-icons
       - nvm
-      - polybar
       - nsxiv
       - auto-cpufreq
     user: "{{ username }}"
