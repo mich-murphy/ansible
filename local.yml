@@ -2,10 +2,8 @@
 - hosts: localhost
   become: yes
   vars:
-    - username: mm
-    - dotfiles_repo: git@github.com:mich-murphy/i3-dotfiles.git
-    - source_key: "./.ssh/id_rsa"
-    - dest_key: "/home/{{ username }}/.ssh/id_rsa"
+    username: mm
+    dotfiles_repo: git@github.com:mich-murphy/i3-dotfiles.git
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
