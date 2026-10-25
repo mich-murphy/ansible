@@ -3,7 +3,7 @@
   become: yes
   vars:
     username: mm
-    dotfiles_repo: git@github.com:mich-murphy/i3-dotfiles.git
+    dotfiles_repo: https://github.com/mich-murphy/i3-dotfiles.git
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
