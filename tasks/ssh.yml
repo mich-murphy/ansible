@@ -1,23 +1,11 @@
 ---
 - name: ensure .ssh directory exists
   file:
-    dest: "{{ dest_key | dirname }}"
+    dest: "/home/{{ username }}/.ssh"
     mode: 0700
     state: directory
     owner: "{{ username }}"
     group: wheel
-
-- name: install ssh key
-  copy:
-    src: "{{ source_key }}"
-    dest: "{{ dest_key }}"
-    mode: 0644
-
-- name: install ssh key public
-  copy:
-    src: "{{ source_key }}.pub"
-    dest: "{{ dest_key }}.pub"
-    mode: 0644
 
 - name: set authorized key from github
   authorized_key:
